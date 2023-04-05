@@ -1,14 +1,14 @@
 const getJoke = require('./src/getJoke');
 const getPromptScore = require('./src/getPromptScores');
-const getQuery = require('./src/getQuery');
+const getVariable = require('./src/getVariable');
 const getWeatherForecast = require('./src/weather');
 const twitterTrends = require('./src/twitterTrends');
 const askToGpt3 = require('./src/askToGpt3');
 
 exports.handler = async (event) => {
-  const query = getQuery(event, 'q');
-  const lat = getQuery(event, 'lat');
-  const lng = getQuery(event, 'lng');
+  const query = getVariable(event, 'q');
+  const lat = getVariable(event, 'lat');
+  const lng = getVariable(event, 'lng');
 
   const prompt = query.trim().replace(/[^\w\sğüşıöçĞÜŞİÖÇ]/gi, '').toLocaleLowerCase();
 

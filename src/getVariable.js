@@ -1,4 +1,4 @@
-module.exports = function getQuery(event, key) {
+module.exports = function getVariable(event, key) {
     let query = '';
     let method = event.requestContext?.http?.method ? event.requestContext.http.method : event.requestContext.httpMethod;
 
