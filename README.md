@@ -17,7 +17,7 @@ IOS kestirmeler uygulamasından yapılacak çağrılara sesli cevap vermesi amac
 
 ## Geliştirme
 
-template.example.yaml dosyası template.yaml dosyasına kopyalanarak kullanılabilir. Duruma göre AWS lambda olarak kullanılacaksa package.json içerisindeki `iosShortcutsResponder` ismi de ve `eu-west-2` olan bölge değeri de fonksiyonunuza göre değiştirilmelidir.
+template.example.yaml dosyası template.yaml dosyasına kopyalanarak kullanılabilir. Duruma göre AWS lambda olarak kullanılacaksa package.json içerisindeki `iosShortcutsResponder` ismi ve `eu-west-2` olan bölge değeri de fonksiyonunuza göre değiştirilmelidir.
 
 `template.yaml` dosyasında doldurulması gereken değerler:
 
