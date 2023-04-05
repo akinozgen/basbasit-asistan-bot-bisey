@@ -6,8 +6,7 @@ module.exports = async (query) => {
 
     const client = axios.create({
         headers: {
-            Authorization: `Bearer ${process.env.CHATGPT_API_KEY}`,
-            'OpenAI-Organization': 'org-2SjRb5IswnDStZb8u2Na4fbx',
+            Authorization: `Bearer ${process.env.CHATGPT_API_KEY}`
         },
     });
 
