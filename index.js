@@ -6,7 +6,9 @@ const twitterTrends = require('./src/twitterTrends');
 const askToGpt3 = require('./src/askToGpt3');
 
 exports.handler = async (event) => {
-  const query = getQuery(event);
+  const query = getQuery(event, 'q');
+  const lat = getQuery(event, 'lat');
+  const lng = getQuery(event, 'lng');
 
   const prompt = query.trim().replace(/[^\w\sğüşıöçĞÜŞİÖÇ]/gi, '').toLocaleLowerCase();
 
@@ -17,9 +19,9 @@ exports.handler = async (event) => {
       return `Bugün ${tarih}`;
     },
     'hava nasıl,sıcaklık nedir': async () => {
-      const { description, temperature } = await getWeatherForecast();
+      const { description, temperature } = await getWeatherForecast(lat, lng);
 
-      return `Antalya'da hava ${description} ve ${temperature} derece`;
+      return `Hava ${description} ve ${temperature} derece`;
     },
     'sunucular aktif mi,kalkanlar devrede mi': async () => await getServerStatuses(),
     'fıkra anlat,fikra,şaka yap,şaka,güldür beni,güldür': async () => getJoke(),

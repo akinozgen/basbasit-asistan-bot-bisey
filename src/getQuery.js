@@ -1,4 +1,4 @@
-module.exports = function getQuery(event) {
+module.exports = function getQuery(event, key) {
     let query = '';
     let method = event.requestContext?.http?.method ? event.requestContext.http.method : event.requestContext.httpMethod;
 
@@ -7,14 +7,14 @@ module.exports = function getQuery(event) {
         try {
             // Try parsing body as JSON
             const bodyObj = JSON.parse(event.body);
-            if (bodyObj.q) {
-                query = bodyObj.q;
+            if (bodyObj[key]) {
+                query = bodyObj[key];
             }
         } catch (err) {
             // Body is not JSON, try parsing as URL-encoded form data
             const formData = new URLSearchParams(event.body);
-            if (formData.get('q')) {
-                query = formData.get('q');
+            if (formData.get(key)) {
+                query = formData.get(key);
             }
         }
 
@@ -25,16 +25,16 @@ module.exports = function getQuery(event) {
                 const boundary = contentType.match(/boundary=(.*)/)[1];
                 const parts = event.body.split(`--${boundary}`);
                 for (const part of parts) {
-                    if (part.includes('name="q"')) {
+                    if (part.includes(`name="${key}"`)) {
                         query = part.split('\r\n\r\n')[1].trim();
                         break;
                     }
                 }
             }
         }
-    } else if (method === 'GET' && event.queryStringParameters && event.queryStringParameters.q) {
+    } else if (method === 'GET' && event.queryStringParameters && event.queryStringParameters[key]) {
         // Check for query parameter in URL
-        query = event.queryStringParameters.q;
+        query = event.queryStringParameters[key];
     }
 
     return query;
