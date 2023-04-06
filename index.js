@@ -5,8 +5,8 @@ import responseTexts from "./lib/responseTexts.js";
 
 export const handler = async (event) => {
   const query = getVariable(event, "q");
-  const lat = getVariable(event, "lat");
-  const lng = getVariable(event, "lng");
+
+  process.event = event;
 
   const prompt = query
     .trim()
