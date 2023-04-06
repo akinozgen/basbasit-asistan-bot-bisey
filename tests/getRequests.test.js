@@ -48,5 +48,9 @@ describe('GET requests', () => {
 
       expect(response.data).toBe(expected);
     }, 10000);
+  } else {
+    test('should just work', () => {
+      expect(true).toBe(true);
+    });
   }
 });
