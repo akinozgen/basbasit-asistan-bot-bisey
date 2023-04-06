@@ -1,5 +1,5 @@
-import { getVariable } from "./src/getVariable.js";
-import { getPromptScore } from "./src/getPromptScores.js";
+import { getVariable } from "./lib/getVariable.js";
+import { getPromptScore } from "./lib/getPromptScores.js";
 
 import responseTexts from "./lib/responseTexts.js";
 
