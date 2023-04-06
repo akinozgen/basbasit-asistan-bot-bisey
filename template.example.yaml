@@ -1,22 +1,22 @@
-AWSTemplateFormatVersion: "2010-09-09"
-Transform: "AWS::Serverless-2016-10-31"
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 Resources:
   iosShortcutsResponder:
-    Type: "AWS::Serverless::Function"
+    Type: 'AWS::Serverless::Function'
     Properties:
       Handler: index.handler
       Runtime: nodejs18.x
       CodeUri: .
-      Description: ""
+      Description: ''
       MemorySize: 128
       Timeout: 15
       # Role: >-
       #   arn:aws:iam::1111111111:role/service-role/iosShortcutsResponder-role-xxxxxxx
       Environment:
         Variables:
-          CHAT_ID: "-0000000000"
-          TELEGRAM_API_KEY: "00000000:AAAA-000000000000000000000000000"
+          CHAT_ID: '-0000000000'
+          TELEGRAM_API_KEY: '00000000:AAAA-000000000000000000000000000'
           WEATHER_API_KEY: 00000000000000000000000000
           OPENAI_API_KEY: xx-00000000000000000000000000000000
       Events:

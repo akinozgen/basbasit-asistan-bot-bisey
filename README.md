@@ -53,7 +53,7 @@ npm run start
 const responseTexts = {
   // ...
 
-  "hava nasıl,bugün hava nasıl,sıcaklık nasıl,sıcaklık,hava durumu": async () =>
+  'hava nasıl,bugün hava nasıl,sıcaklık nasıl,sıcaklık,hava durumu': async () =>
     await getWeather(lat, lng),
 
   // ...
@@ -85,7 +85,7 @@ Daha sonra `responseTexts` içerisindeki `hava nasıl,bugün hava nasıl,sıcakl
 Her istek parametresi `getVariable` fonksiyonuyla alınır. `event` ve istenen alanın değeri olan `key` şeklinde aşağıdaki gibi iki parametre alır.
 
 ```javascript
-getVariable(event, "q");
+getVariable(event, 'q');
 ```
 
 - `q`: sorgu metni. istenilen cevabın bir parçasını içermesi yeterlidir.
