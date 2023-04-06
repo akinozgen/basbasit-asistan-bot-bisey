@@ -5,4 +5,7 @@ export default {
     test: global.test || undefined,
     expect: global.expect || undefined,
   },
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+  },
 };
