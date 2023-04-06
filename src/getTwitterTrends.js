@@ -51,6 +51,7 @@ export async function getTwitterTrends() {
     .filter(
       (trend) =>
         trend.trim() !== '' &&
+        // eslint-disable-next-line no-control-regex
         !trend.match(/[^\x00-\x7F]/g) &&
         !trend.match(/[\u0600-\u06FF]/g)
     );
