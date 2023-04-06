@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-const url = "http://localhost:3004/";
+const url = 'http://localhost:3004/';
 const params = {
-  q: "hava",
+  q: 'hava',
   lat: 40.73061,
   lng: -73.935242,
 };
