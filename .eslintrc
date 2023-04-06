@@ -14,5 +14,9 @@
   },
   "env": {
     "node": true
+  },
+  "globals": {
+    "test": "readonly",
+    "expect": "readonly"
   }
 }
