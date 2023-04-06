@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-module.exports = async function getWeatherForecast(lat, lon) {
+export async function getWeatherForecast(lat, lon) {
     // Use the OpenWeatherMap API to get the weather forecast for Antalya, Turkey
     const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {

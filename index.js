@@ -1,11 +1,13 @@
-const getJoke = require('./src/getJoke');
-const getPromptScore = require('./src/getPromptScores');
-const getVariable = require('./src/getVariable');
-const getWeatherForecast = require('./src/weather');
-const twitterTrends = require('./src/twitterTrends');
-const askToGpt3 = require('./src/askToGpt3');
+import { getServerStatuses } from './src/getServerStatuses.js';
+import { getVariable } from './src/getVariable.js';
+import { getPromptScore } from './src/getPromptScores.js';
+import { getWeatherForecast } from './src/weather.js';
+import { getTwitterTrends } from './src/getTwitterTrends.js';
+import { askToGpt3 } from './src/askToGpt3.js';
+import { getJoke } from './src/getJoke.js';
 
-exports.handler = async (event) => {
+
+export const handler = async (event) => {
   const query = getVariable(event, 'q');
   const lat = getVariable(event, 'lat');
   const lng = getVariable(event, 'lng');
@@ -26,7 +28,7 @@ exports.handler = async (event) => {
     'sunucular aktif mi,kalkanlar devrede mi': async () => await getServerStatuses(),
     'fıkra anlat,fikra,şaka yap,şaka,güldür beni,güldür': async () => getJoke(),
     'trendler,twitter trendleri, twitter, gündem': async () => {
-      const trends = await twitterTrends();
+      const trends = await getTwitterTrends();
       return `Bugün gündemde olanlar:\n${trends.join('\n')}`
     },
     'gpt,cipiti': async () => {

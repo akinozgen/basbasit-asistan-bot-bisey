@@ -1,4 +1,4 @@
-module.exports = function levenshteinDistance(str1, str2) {
+export function levenshteinDistance(str1, str2) {
     const m = str1.length;
     const n = str2.length;
     const dp = Array.from(Array(m + 1), () => Array(n + 1).fill(0));

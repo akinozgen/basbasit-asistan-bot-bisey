@@ -1,4 +1,4 @@
-module.exports = function getJoke() {
+export function getJoke() {
     const jokes = [
         "Sinüs 60. kosinüs tutmuş.",
         "Bebeğin birine tır çarpmış ama ölmemiş, neden? Çünkü bebeğin bezi bariyerliymiş.",

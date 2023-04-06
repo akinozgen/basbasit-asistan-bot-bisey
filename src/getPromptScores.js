@@ -1,4 +1,4 @@
-module.exports = function getPromptScore(prompt, responseTexts) {
+export function getPromptScore(prompt, responseTexts) {
     const scores = {};
 
     // Split prompt into an array of words
