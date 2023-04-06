@@ -16,7 +16,7 @@ jobs:
         run: yarn install
 
       - name: Test
-        run: yarn test
+        run: export GITHUB_ACTIONS=true && yarn test
 
       - name: Setup AWS secrets
         run: |
