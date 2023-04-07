@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { getVariable } from '../lib/getVariable.js';
 
-export async function askToGpt3(query) {
+export async function askToGpt3() {
+  const query = getVariable(process.event, 'query');
+
   const prompt = query
     .trim()
     .replace(/[^\w\sğüşıöçĞÜŞİÖÇ]/gi, '')

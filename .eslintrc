@@ -1,16 +1,17 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "plugin:node/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:node/recommended"],
   "plugins": ["prettier", "node"],
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
   "rules": {
-    // Additional rules or overrides can be added here
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100
+      }
+    ]
   },
   "env": {
     "node": true

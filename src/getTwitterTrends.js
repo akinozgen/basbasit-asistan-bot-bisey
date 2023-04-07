@@ -28,11 +28,8 @@ export async function getTwitterTrends() {
   });
   const trendsHtml = response.data;
 
-  // Selector: <ol class=trend-card__list>ANYTHING</ol>
-  const trendsList = trendsHtml.match(
-    /<ol class=trend-card__list>(.|\n)*?<\/ol>/g
-  )[0];
-  // Selector: <li><a href="LINK">TREND_WORD</a><br><span class=tweet-count>NUMBER</span></li>
+  const trendsList = trendsHtml.match(/<ol class=trend-card__list>(.|\n)*?<\/ol>/g)[0];
+
   const trendsListItems = trendsList.match(/<li>(.|\n)*?<\/li>/g);
   trendsListItems.forEach((trendListItem) => {
     const trendWord = trendListItem
@@ -56,5 +53,5 @@ export async function getTwitterTrends() {
         !trend.match(/[\u0600-\u06FF]/g)
     );
 
-  return trends;
+  return `Bugün gündemde olanlar:\n${trends.join('.\n')}`;
 }
