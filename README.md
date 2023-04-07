@@ -1,5 +1,7 @@
 ### basbasit-asistan-bot-bisey
 
+_chatgpt'ye teşkürler_
+
 IOS kestirmeler uygulamasından yapılacak çağrılara sesli cevap vermesi amacıyla geliştirilmiş bir asistan botudur. Kullanıcıdan sorgu metni ve konum bilgisi alır. Önceden belirlenmiş bazı komutlar için özel cevaplar vardır. Konum bilgisi ile Openweathermap API'si kullanılarak hava durumu bilgisi alınır.
 
 Özel komutlar:
