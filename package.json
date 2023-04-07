@@ -10,11 +10,11 @@
     "aws:validate": "sam validate --region eu-west-2",
     "compile": "rm -f functions.zip && zip -r functions.zip --exclude=*.git* --exclude=*.DS_Store* --exclude='iosShortcutsResponder.yaml:Zone.Identifier' --exclude='template.yaml' --exclude='iosShortcutsResponder.yaml' --exclude=*.zip* .",
     "aws:deploy": "npm run compile && aws lambda update-function-code --function-name iosShortcutsResponder --region eu-west-2 --zip-file fileb://functions.zip",
-    "test:watch": "nodemon --exec \"npm test\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "test": "jest --config jest.config.js"
+    "test": "jest --config jest.config.js",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Akın Özgen <akinozgen17@outlook.com>",
   "license": "MIT",
