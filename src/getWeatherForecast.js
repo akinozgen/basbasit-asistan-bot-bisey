@@ -2,8 +2,8 @@ import axios from 'axios';
 import { getVariable } from '../lib/getVariable.js';
 
 export async function getWeatherForecast() {
-  const lat = getVariable(process.eventNames, 'lat');
-  const lng = getVariable(process.eventNames, 'lng');
+  const lat = getVariable(process.event, 'lat');
+  const lng = getVariable(process.event, 'lng');
 
   const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
     params: {
