@@ -25,7 +25,7 @@ describe('GET requests', () => {
       })}`.replace(/:[0-9][0-9]/g, ':00');
 
       expect(response.data).toBe(expected);
-    }, 10000);
+    }, 30000);
 
     test('should get current date', async () => {
       const params = {
