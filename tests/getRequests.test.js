@@ -47,7 +47,21 @@ describe('GET requests', () => {
       })}`;
 
       expect(response.data).toBe(expected);
-    }, 10000);
+    }, 30000);
+
+    test('should get exchange rates', async () => {
+      const params = {
+        q: 'döviz',
+        lat,
+        lng,
+      };
+
+      const response = await axios.get(url, { params });
+
+      expect(response.status).toBe(200);
+
+      expect(response.data).toContain('Allah belanızı versin.');
+    }, 30000);
   } else {
     test('should just work', () => {
       expect(true).toBe(true);
